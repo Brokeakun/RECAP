@@ -1,5 +1,5 @@
 import { google } from 'googleapis';
-import type { GoogleDriveFile } from '../src/types';
+import type { GoogleDriveFile } from '../types';
 
 export async function getDriveFiles(): Promise<GoogleDriveFile[]> {
   const { GDRIVE_CLIENT_EMAIL, GDRIVE_PRIVATE_KEY, GDRIVE_FOLDER_ID } = process.env;
