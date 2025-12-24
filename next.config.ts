@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
   },
   // Fix for googleapis in serverless environment
   serverExternalPackages: ['googleapis'],
+  output: 'standalone',
 };
 
 export default nextConfig;

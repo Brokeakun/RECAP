@@ -69,7 +69,12 @@ export default function Gallery() {
     async function fetchData() {
       try {
         // Coba gunakan endpoint Pages Router sebagai fallback jika App Router bermasalah
-        const res = await fetch('/api/drive-pages');
+        let res = await fetch('/api/drive-pages');
+        if (!res.ok) {
+          console.warn('Pages Router endpoint failed, trying App Router endpoint...');
+          res = await fetch('/api/drive');
+        }
+
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
