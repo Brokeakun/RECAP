@@ -8,7 +8,7 @@ import BackgroundAura from '../components/BackgroundAura';
 
 // Ganti URL ini dengan file lagu yang Anda simpan di folder public
 // Simpan lagu "Hindia - Everything You Are" sebagai "lagu.mp3" di folder public
-const MUSIC_URL = "/everything u are.mp3";
+const MUSIC_URL = "/everything-u-are.mp3";
 
 export default function Gallery() {
   const [files, setFiles] = useState<GoogleDriveFile[]>([]);
@@ -68,6 +68,7 @@ export default function Gallery() {
   useEffect(() => {
     async function fetchData() {
       try {
+        // Gunakan relative path agar otomatis menyesuaikan dengan domain (localhost atau vercel)
         const res = await fetch('/api/drive');
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
