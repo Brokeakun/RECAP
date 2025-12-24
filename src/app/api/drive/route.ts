@@ -1,4 +1,4 @@
-import { getDriveFiles } from '@/lib/googleDrive';
+import { getDriveFiles } from '../../../lib/googleDrive';
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
