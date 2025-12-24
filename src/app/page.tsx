@@ -68,8 +68,8 @@ export default function Gallery() {
   useEffect(() => {
     async function fetchData() {
       try {
-        // Gunakan relative path agar otomatis menyesuaikan dengan domain (localhost atau vercel)
-        const res = await fetch('/api/drive');
+        // Coba gunakan endpoint Pages Router sebagai fallback jika App Router bermasalah
+        const res = await fetch('/api/drive-pages');
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
